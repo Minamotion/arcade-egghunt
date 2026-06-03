@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://ppwfojd1oyin"]
+
+[ext_resource type="Script" uid="uid://bu1dx42s0kynw" path="res://scenes/gameplay/stats/stats.gd" id="1_l8a65"]
+
+[node name="Stats" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l8a65")
+
+[node name="EggStatLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[bgcolor=black][font=\"uid://prcqxo2smajm\"][font_size=8][img]uid://po1n4nwhr3xv[/img]:{egg}[/font_size][/font][/bgcolor]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 2
+
+[node name="TimerStatLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[bgcolor=black][font=\"uid://prcqxo2smajm\"][font_size=8]{timer}[/font_size][/font][/bgcolor]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="HealthStatLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[bgcolor=black][font=\"uid://prcqxo2smajm\"][font_size=8]{hp}/{maxhp}[/font_size][/font][/bgcolor]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2

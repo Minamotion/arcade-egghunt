@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://buj6p8ub53hby"]
+
+[ext_resource type="Texture2D" uid="uid://cabk7g6dcv4y1" path="res://assets/images/endings/starving.png" id="1_74k12"]
+[ext_resource type="Script" uid="uid://ctytgiat46kyh" path="res://scenes/starving/starving.gd" id="1_i6ht1"]
+[ext_resource type="AudioStream" uid="uid://kx3jqda5lay1" path="res://assets/music/endings/starving.mp3" id="3_bsr3n"]
+
+[node name="Starving" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i6ht1")
+
+[node name="Sad" type="Sprite2D" parent="."]
+texture = ExtResource("1_74k12")
+centered = false
+
+[node name="Why" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouMonster" type="RichTextLabel" parent="Why"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font=\"uid://prcqxo2smajm\"][shake][color=red]YOU MONSTER![/color][/shake][/font]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarveText" type="RichTextLabel" parent="Why"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[font=\"uid://prcqxo2smajm\"][font_size=8]{why}[/font_size][/font]"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Starving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bsr3n")
+pitch_scale = 0.75
+autoplay = true

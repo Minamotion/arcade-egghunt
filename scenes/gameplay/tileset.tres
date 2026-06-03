@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" format=3 uid="uid://5s06in2p3jqs"]
+
+[ext_resource type="Texture2D" uid="uid://cmcw1ar7lcnf6" path="res://assets/images/gameplay/tilesets/grass.png" id="1_ivb1o"]
+[ext_resource type="Texture2D" uid="uid://cqn4gu3x0oemj" path="res://assets/images/gameplay/tilesets/test.png" id="2_x6pw8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c0jb"]
+resource_name = "Tiles"
+texture = ExtResource("1_ivb1o")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2, -8, 2)
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eaecr"]
+texture = ExtResource("2_x6pw8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+custom_data_layer_0/name = "isEggable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_5c0jb")
+sources/1 = SubResource("TileSetAtlasSource_eaecr")

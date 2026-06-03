@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://cci58fvjbp3dl"]
+
+[ext_resource type="Script" uid="uid://cr8o7mb1pc87o" path="res://scenes/gameplay/player/player.gd" id="1_ssrue"]
+[ext_resource type="Texture2D" uid="uid://cqraswppdqh4g" path="res://assets/images/gameplay/player.png" id="2_jnjyq"]
+[ext_resource type="AudioStream" uid="uid://m5t18h6w3yih" path="res://assets/sounds/hurt.wav" id="3_gnkmh"]
+[ext_resource type="AudioStream" uid="uid://c6jychw6wpknp" path="res://assets/sounds/earn.wav" id="4_fbmmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssrue"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rerk"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbmmh"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stmte"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwi3p"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(16, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psowp"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0bnd"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2348"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xho7g"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc5u4"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ay0d"]
+atlas = ExtResource("2_jnjyq")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_no36w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbmmh")
+}],
+"loop": true,
+"name": &"d_idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stmte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbmmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwi3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbmmh")
+}],
+"loop": true,
+"name": &"d_move",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psowp")
+}],
+"loop": true,
+"name": &"lr_idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0bnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2348")
+}],
+"loop": true,
+"name": &"lr_move",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xho7g")
+}],
+"loop": true,
+"name": &"u_idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc5u4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xho7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ay0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xho7g")
+}],
+"loop": true,
+"name": &"u_move",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=279271806]
+collision_layer = 2
+script = ExtResource("1_ssrue")
+
+[node name="EggDetector" type="Area2D" parent="." unique_id=1560791216]
+collision_layer = 2
+collision_mask = 8
+input_pickable = false
+monitorable = false
+
+[node name="Collider" type="CollisionShape2D" parent="EggDetector" unique_id=1729506342]
+shape = SubResource("RectangleShape2D_ssrue")
+debug_color = Color(0.519194, 0.574905, 0, 0.42)
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1340231224]
+shape = SubResource("RectangleShape2D_3rerk")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1270626341]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_no36w")
+animation = &"lr_idle"
+autoplay = "lr_idle"
+frame_progress = 0.936328
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=1902073377]
+unique_name_in_owner = true
+stream = ExtResource("3_gnkmh")
+
+[node name="Earn" type="AudioStreamPlayer" parent="." unique_id=891732323]
+unique_name_in_owner = true
+stream = ExtResource("4_fbmmh")
+
+[connection signal="area_entered" from="EggDetector" to="." method="_on_egg_detector_detect_egg"]

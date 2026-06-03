@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3t2tbnv6murb"]
+
+[ext_resource type="Texture2D" uid="uid://vvrlaxwslg88" path="res://assets/images/endings/sleepy.png" id="1_nbawk"]
+[ext_resource type="Script" uid="uid://dkq8xay46aeom" path="res://scenes/results/results.gd" id="1_vmlr1"]
+[ext_resource type="AudioStream" uid="uid://cc3dlvu0cvklu" path="res://assets/music/endings/results.mp3" id="3_iaiks"]
+
+[node name="Results" type="Node"]
+script = ExtResource("1_vmlr1")
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Sleepy" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_nbawk")
+centered = false
+
+[node name="Results" type="CanvasLayer" parent="."]
+
+[node name="Results" type="VBoxContainer" parent="Results"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Results" type="RichTextLabel" parent="Results/Results"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=\"uid://prcqxo2smajm\"][font_size=8]Score: {score}
+{hiscore}[/font_size][/font]"
+fit_content = true
+
+[node name="Instructions" type="RichTextLabel" parent="Results/Results"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=\"uid://prcqxo2smajm\"][font_size=8]Press A to retry
+Press B to close[/font_size][/font]"
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="WinnerTune" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_iaiks")
+autoplay = true

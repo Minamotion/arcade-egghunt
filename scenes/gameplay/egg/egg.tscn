@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djtp7iha2el0u"]
+
+[ext_resource type="Script" uid="uid://bekaxjowfw1cv" path="res://scenes/gameplay/egg/egg.gd" id="1_hxq0t"]
+[ext_resource type="Texture2D" uid="uid://po1n4nwhr3xv" path="res://assets/images/gameplay/egg.png" id="1_q54iw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nanoi"]
+size = Vector2(8, 8)
+
+[node name="Egg" type="Area2D" unique_id=619049405 groups=["egg"]]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_hxq0t")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1744251565]
+shape = SubResource("RectangleShape2D_nanoi")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1101303595]
+texture = ExtResource("1_q54iw")
