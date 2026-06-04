@@ -35,6 +35,9 @@ func _ready() -> void:
 			eggable_cells.push_front(cell)
 	spawn_player()
 	print("Gameplay set up, waiting for countdown...\n")
+	
+	camera.limit_right = tilemap.cols *32
+	camera.limit_bottom = tilemap.rows *32
 
 
 func start():
@@ -52,28 +55,28 @@ func _process(delta: float) -> void:
 
 func spawn_special_egg():
 	var node = special_egg_scene.instantiate()
-	node.global_position = Vector2(eggable_cells.pick_random() * 16) + Vector2(8,8) + Vector2(randi_range(-4,4),randi_range(-4,4))
+	node.global_position = Vector2(eggable_cells.pick_random() * 32) + Vector2(16, 16) + Vector2(randi_range(-8, 8), randi_range(-8, 8))
 	map.call_deferred("add_child", node)
 	print("Spawned special egg at ", node.global_position)
 
 
 func spawn_egg():
 	var node = egg_scene.instantiate()
-	node.global_position = Vector2(eggable_cells.pick_random() * 16) + Vector2(8,8) + Vector2(randi_range(-4,4),randi_range(-4,4))
+	node.global_position = Vector2(eggable_cells.pick_random() * 32) + Vector2(16, 16) + Vector2(randi_range(-8, 8), randi_range(-8, 8))
 	map.call_deferred("add_child", node)
 	print("Spawned egg at ", node.global_position)
 
 
 func spawn_ghost():
 	var node = ghost_scene.instantiate()
-	node.global_position = Vector2(eggable_cells.pick_random() * 16) + Vector2(8,8)
+	node.global_position = Vector2(eggable_cells.pick_random() * 32) + Vector2(16, 16)
 	map.call_deferred("add_child", node)
 	print("Spawned ghost at ", node.global_position)
 
 
 func spawn_player():
 	var node = player_scene.instantiate()
-	node.global_position = Vector2(eggable_cells.pick_random() * 16) + Vector2(8,8)
+	node.global_position = Vector2(eggable_cells.pick_random() * 32) + Vector2(16, 16)
 	map.call_deferred("add_child", node)
 	print("Spawned player at ", node.global_position)
 

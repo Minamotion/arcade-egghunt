@@ -15,12 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Arcade Egghunt"
-config/description="You are you (fast and hungry)"
+config/description="You are you. Eat egg. Don't die."
 config/version="1.0.0.0"
 config/tags=PackedStringArray("2d", "pixel")
 run/main_scene="uid://bifft30f8vtey"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="minamotion/egghunt"
+config/disable_project_settings_override=true
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=30

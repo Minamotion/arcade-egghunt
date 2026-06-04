@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmcw1ar7lcnf6"
-path="res://.godot/imported/grass.png-13248f075d68e86662c4f1c815f517e4.ctex"
+uid="uid://c8fil3dt02hys"
+path="res://.godot/imported/poke.png-8d9ac5e82c3b583728de1095dfb281ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gameplay/tilesets/grass.png"
-dest_files=["res://.godot/imported/grass.png-13248f075d68e86662c4f1c815f517e4.ctex"]
+source_file="res://assets/images/poke.png"
+dest_files=["res://.godot/imported/poke.png-8d9ac5e82c3b583728de1095dfb281ea.ctex"]
 
 [params]
 

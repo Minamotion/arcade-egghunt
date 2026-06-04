@@ -2,6 +2,7 @@ extends Node
 
 
 var hiscore: int
+var seen_story: bool= false
 
 
 var _about_to_close_program: bool= false
@@ -45,7 +46,7 @@ func close_window():
 	if not _about_to_close_program:
 		_about_to_close_program = true
 		Save.save_file()
-		print("\nAbout to close program...")
+		print("\nClosing...")
 		get_tree().change_scene_to_file("res://scenes/thanks/thanks.tscn")
 
 

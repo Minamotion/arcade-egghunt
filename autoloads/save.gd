@@ -6,7 +6,7 @@ signal file_saved(created: bool) ## Emitted when a file is saved, or created
 signal file_loaded(upgraded: bool) ## Emitted when a file is loaded, or upgraded
 
 
-const _path: String= "user://score.dat"
+const _path: String= "user://save.dat" ## Path to the save file
 const _my_version: int= 0 ## Save file's version to be checked so it can be upgraded
 
 ## Creates a new save file, emits [code]file_saved[/code].

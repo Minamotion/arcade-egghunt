@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4l1sqc30jovj"]
+[gd_scene format=3 uid="uid://c4l1sqc30jovj"]
 
 [ext_resource type="Script" uid="uid://djabliwl2on6m" path="res://scenes/titlescreen/titlescreen.gd" id="1_7w7l7"]
 [ext_resource type="Texture2D" uid="uid://o4f82hwoym3a" path="res://assets/images/titlescreen/background.png" id="1_kkxvh"]
@@ -94,13 +94,13 @@ _data = {
 &"titlescreen": SubResource("Animation_7w7l7")
 }
 
-[node name="Title" type="Node"]
+[node name="Title" type="Node" unique_id=462706855]
 script = ExtResource("1_7w7l7")
 
-[node name="Titlescreen" type="CanvasLayer" parent="."]
+[node name="Titlescreen" type="CanvasLayer" parent="." unique_id=341359181]
 unique_name_in_owner = true
 
-[node name="Titlescreen" type="Control" parent="Titlescreen"]
+[node name="Titlescreen" type="Control" parent="Titlescreen" unique_id=103795251]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,22 +108,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="Node2D" parent="Titlescreen/Titlescreen"]
+[node name="Background" type="Node2D" parent="Titlescreen/Titlescreen" unique_id=1109703282]
 
-[node name="BG1" type="Sprite2D" parent="Titlescreen/Titlescreen/Background"]
+[node name="BG1" type="Sprite2D" parent="Titlescreen/Titlescreen/Background" unique_id=258006876]
 texture = ExtResource("1_kkxvh")
 centered = false
 
-[node name="BG2" type="Sprite2D" parent="Titlescreen/Titlescreen/Background"]
+[node name="BG2" type="Sprite2D" parent="Titlescreen/Titlescreen/Background" unique_id=186733143]
 texture = ExtResource("1_kkxvh")
 centered = false
 offset = Vector2(160, 0)
 
-[node name="Title" type="Sprite2D" parent="Titlescreen/Titlescreen"]
+[node name="Title" type="Sprite2D" parent="Titlescreen/Titlescreen" unique_id=965149276]
 position = Vector2(80, 60)
 texture = ExtResource("2_7w7l7")
 
-[node name="Highscore" type="RichTextLabel" parent="Titlescreen/Titlescreen"]
+[node name="Highscore" type="RichTextLabel" parent="Titlescreen/Titlescreen" unique_id=1495939590]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
@@ -135,7 +135,7 @@ text = "[bgcolor=black][font=\"uid://prcqxo2smajm\"][font_size=8]HiScore: {hisco
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Instructions" type="RichTextLabel" parent="Titlescreen/Titlescreen"]
+[node name="Instructions" type="RichTextLabel" parent="Titlescreen/Titlescreen" unique_id=338542772]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -150,27 +150,25 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Animator" type="AnimationPlayer" parent="Titlescreen/Titlescreen"]
+[node name="Animator" type="AnimationPlayer" parent="Titlescreen/Titlescreen" unique_id=729659750]
 root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_33qfj")
-}
-autoplay = "titlescreen"
+libraries/ = SubResource("AnimationLibrary_33qfj")
+autoplay = &"titlescreen"
 
-[node name="Storylayer" type="CanvasLayer" parent="."]
+[node name="Storylayer" type="CanvasLayer" parent="." unique_id=125955707]
 unique_name_in_owner = true
 visible = false
 
-[node name="Story" type="Node2D" parent="Storylayer"]
+[node name="Story" type="Node2D" parent="Storylayer" unique_id=545407403]
 
-[node name="StoryGraphic" type="Sprite2D" parent="Storylayer/Story"]
+[node name="StoryGraphic" type="Sprite2D" parent="Storylayer/Story" unique_id=1423386140]
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("4_cfxbx")
 centered = false
 hframes = 5
 
-[node name="Control" type="Control" parent="Storylayer"]
+[node name="Control" type="Control" parent="Storylayer" unique_id=1887354865]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,7 +176,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBox" type="VBoxContainer" parent="Storylayer/Control"]
+[node name="VBox" type="VBoxContainer" parent="Storylayer/Control" unique_id=1149073624]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,11 +184,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EmptySpace" type="Control" parent="Storylayer/Control/VBox"]
+[node name="EmptySpace" type="Control" parent="Storylayer/Control/VBox" unique_id=640170689]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="StoryText" type="RichTextLabel" parent="Storylayer/Control/VBox"]
+[node name="StoryText" type="RichTextLabel" parent="Storylayer/Control/VBox" unique_id=2048925475]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -199,11 +197,11 @@ text = "[font=\"uid://prcqxo2smajm\"][font_size=8]Do eggs actually love me?[/fon
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Earn" type="AudioStreamPlayer" parent="."]
+[node name="Earn" type="AudioStreamPlayer" parent="." unique_id=1583337753]
 unique_name_in_owner = true
 stream = ExtResource("5_33qfj")
 
-[node name="ArcadeMachine" type="AudioStreamPlayer" parent="."]
+[node name="ArcadeMachine" type="AudioStreamPlayer" parent="." unique_id=1318608992]
 stream = ExtResource("6_cfxbx")
 volume_db = -12.0
 autoplay = true

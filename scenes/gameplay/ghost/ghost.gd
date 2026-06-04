@@ -9,6 +9,17 @@ var _i_frames: int= 60
 var _last_position: Vector2= global_position
 
 
+@onready var poke_scene: PackedScene= preload("res://scenes/gameplay/ghost/poke/poke.tscn")
+
+
+func respawn() -> void:
+	var poke: Node2D= poke_scene.instantiate()
+	poke.global_position = global_position
+	get_parent().add_child(poke)
+	queue_free()
+	Session.game.spawn_ghost()
+
+
 func _physics_process(delta: float) -> void:
 	if Session.player is Player and (_i_frames <= 0 and Session.game.freezed_timer <= 0):
 		_last_position = Session.player.global_position
@@ -35,8 +46,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		if body.hurt():
 			print("Player was hurt, respawning...")
-			Session.game.spawn_ghost()
-			queue_free()
+			respawn()
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -44,5 +54,4 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	if area is GhostEnemy:
 		print("Multiple ghosts collided, respawning...\n")
-		queue_free()
-		Session.game.spawn_ghost()
+		respawn()

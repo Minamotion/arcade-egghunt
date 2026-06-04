@@ -1,7 +1,6 @@
 extends Node
 
 
-var stage: int= 0
 @onready var snd_earn := %Earn
 @onready var titlescreen := %Titlescreen
 @onready var storylayer := %Storylayer
@@ -10,15 +9,21 @@ var stage: int= 0
 @onready var highscore := %Highscore
 
 
+var stage: int= 0
+
+
 func _ready():
-	highscore.text = highscore.text.format({"hiscore":Session.hiscore})
+	highscore.text = highscore.text.format({"hiscore": Session.hiscore})
 
 
 func _process(_delta: float) -> void:
-	if (Input.is_action_just_pressed("game_a")):
+	if Input.is_action_just_pressed("game_a"):
 		stage += 1
 		match stage:
 			1:
+				if Session.seen_story:
+					get_tree().change_scene_to_file("res://scenes/gameplay/gameplay.tscn")
+					return
 				titlescreen.hide()
 				storygraphic.show()
 				storylayer.show()
@@ -40,6 +45,7 @@ func _process(_delta: float) -> void:
 				storygraphic.hide()
 				storytext.text = '[font="uid://prcqxo2smajm"][font_size=8]Don\'t die (It\'s stupid)[/font_size][/font]'
 			_:
+				Session.seen_story = true
 				get_tree().change_scene_to_file("res://scenes/gameplay/gameplay.tscn")
 				return
 		snd_earn.play()

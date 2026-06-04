@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7xokfqbh8imc"]
+[gd_scene format=3 uid="uid://b7xokfqbh8imc"]
 
 [ext_resource type="Script" uid="uid://cakpeegcipjlb" path="res://scenes/gameplay/ghost/ghost.gd" id="1_4wx0h"]
 [ext_resource type="Texture2D" uid="uid://dctoic0sit0eu" path="res://assets/images/gameplay/ghost.png" id="1_x4k1n"]
@@ -35,16 +35,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ghost" type="Area2D" groups=["enemy"]]
+[node name="Ghost" type="Area2D" unique_id=1919834964 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_4wx0h")
 
-[node name="Collider" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=755669329]
 shape = SubResource("RectangleShape2D_4wx0h")
 debug_color = Color(1, 0.0122055, 0.0164397, 0.42)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=457725334]
 sprite_frames = SubResource("SpriteFrames_w36ek")
 autoplay = "default"
 frame_progress = 0.521577
