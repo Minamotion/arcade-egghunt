@@ -9,6 +9,10 @@ extends Node
 @onready var highscore := %Highscore
 
 
+@onready var arcade_machine := %ArcadeMachine
+@onready var story_sequence := %StorySequence
+
+
 var stage: int= 0
 
 
@@ -24,6 +28,10 @@ func _process(_delta: float) -> void:
 				if Session.seen_story:
 					get_tree().change_scene_to_file("res://scenes/gameplay/gameplay.tscn")
 					return
+				#region [TEMPORAL STUFF]
+				arcade_machine.stop()
+				story_sequence.play()
+				#endregion
 				titlescreen.hide()
 				storygraphic.show()
 				storylayer.show()

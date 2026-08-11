@@ -1,5 +1,5 @@
 # Egghunt specific ignores
-.bin/
+.export/
 
 # Godot 4.2+ specific ignores
 ~*.dll

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://46m7bqxnyg6i" path="res://assets/images/titlescreen/storysheet.png" id="4_cfxbx"]
 [ext_resource type="AudioStream" uid="uid://c6jychw6wpknp" path="res://assets/sounds/earn.wav" id="5_33qfj"]
 [ext_resource type="AudioStream" uid="uid://ckyr2bw4eysc4" path="res://assets/music/arcade_machine.mp3" id="6_cfxbx"]
+[ext_resource type="AudioStream" uid="uid://co5435t02csom" path="res://assets/music/story_sequence.mp3" id="7_2w1ch"]
 
 [sub_resource type="Animation" id="Animation_hkv24"]
 length = 0.001
@@ -202,6 +203,10 @@ unique_name_in_owner = true
 stream = ExtResource("5_33qfj")
 
 [node name="ArcadeMachine" type="AudioStreamPlayer" parent="." unique_id=1318608992]
+unique_name_in_owner = true
 stream = ExtResource("6_cfxbx")
-volume_db = -12.0
 autoplay = true
+
+[node name="StorySequence" type="AudioStreamPlayer" parent="." unique_id=543374125]
+unique_name_in_owner = true
+stream = ExtResource("7_2w1ch")
